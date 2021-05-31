@@ -147,8 +147,7 @@ impl<'a> ClientBuilder<'a> {
     pub fn token(mut self, token: impl AsRef<str>) -> Self {
         let token = token.as_ref().trim();
 
-        let token =
-            if token.starts_with("Bot ") { token.to_string() } else { format!("Bot {}", token) };
+        let token = token.to_string();
 
         self.token = Some(token.clone());
 
